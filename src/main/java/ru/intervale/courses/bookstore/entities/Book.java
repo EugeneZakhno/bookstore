@@ -4,6 +4,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
+import java.math.BigDecimal;
+
 @Slf4j
 @Data
 @Builder
@@ -13,8 +15,8 @@ public class Book {
     private String ISBN;
     private String name;
     private String author;
-    private String pageNumber;
-    private String weight;
-    private String price;
+    private int pageNumber;
+    private int weight;
+    private BigDecimal price;
 
 }

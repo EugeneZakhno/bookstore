@@ -1,6 +1,5 @@
 package ru.intervale.courses.bookstore.repositories;
 
-
 import org.springframework.stereotype.Repository;
 import ru.intervale.courses.bookstore.entities.Book;
 
@@ -8,8 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Repository
-public class BookRepository {
+public interface BookRepository {
 
- private final Map<Long, Book> storage = new HashMap<>();
+    Map<Long, Book> storage = new HashMap<Long, Book>(Map.of(1L, Book.builder()
+            .id(1L)
+            .author("dfgg")
+            .ISBN("dfhh")
+            .build()));
 
 }
