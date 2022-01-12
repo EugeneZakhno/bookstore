@@ -9,7 +9,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
 @RestController
-@ControllerAdvice
 @AllArgsConstructor
 public class BookController {
 

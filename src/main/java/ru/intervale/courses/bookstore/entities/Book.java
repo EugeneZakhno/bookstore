@@ -18,10 +18,10 @@ public class Book {
     @NotBlank
     private Long id;
 
-    @Pattern(regexp = "[0-9A-Za-z]{18}")
+    @Pattern(regexp = "[0-9A-Za-z]{18}",  message = "Разрешены только латинские буквы и цифры")
     private String ISBN;
 
-    @Pattern(regexp = "[a-zA-Zа-яА-ЯёЁ '-]{1,256}")
+    @Pattern(regexp = "[a-zA-Zа-яА-ЯёЁ '-]{1,256}",  message = "Название не может превышать 255 символов")
     private String name;
 
     @Pattern(regexp = "[a-zA-Zа-яА-ЯёЁ '-]{1,40}")
