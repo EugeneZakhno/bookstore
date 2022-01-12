@@ -5,40 +5,41 @@ import org.springframework.web.bind.annotation.*;
 import ru.intervale.courses.bookstore.entities.Book;
 import ru.intervale.courses.bookstore.service.BookService;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+
 @RestController
+@ControllerAdvice
 @AllArgsConstructor
 public class BookController {
 
     private final BookService bookService;
 
     @PostMapping(value = "/add/{id}")
-    @ResponseBody
-    public Book addBook(@PathVariable Long id, @RequestBody Book book) {
+    public Book addBook(@PathVariable @Min(1) Long id, @Valid @RequestBody Book book) {
     return bookService.addBook(id, book);
    }
 
     @GetMapping(value = "/get")
-    @ResponseBody
     public String getAllBook() {
        return bookService.getAllBook();
     }
 
     @GetMapping(value = "/get/{id}")
-    @ResponseBody
     public Book getBook(@PathVariable Long id) {
         return bookService.getBook(id);
     }
 
     @PostMapping(value = "/edit/{id}")
-    @ResponseBody
-    public Book editBook(@PathVariable Long id, @RequestBody Book book) {
+    public Book editBook(@PathVariable @Min(1) Long id, @Valid @RequestBody Book book) {
         return bookService.editBook(id, book);
     }
 
     @PostMapping(value = "/delete/{id}")
-    @ResponseBody
     public Book deleteBook(@PathVariable Long id) {
         return bookService.deleteBook(id);
     }
+
+
 
 }
