@@ -16,7 +16,7 @@ public class Book {
     private String name;
     private String author;
     private int pageNumber;
-    private int weight;
+    private double weight;
     private BigDecimal price;
 
 }

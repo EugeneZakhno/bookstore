@@ -1,0 +1,72 @@
+POST http://localhost:8080/add/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "ISBN": "155776FG",
+  "name": "Перо в стакане",
+  "author":"German Tryif",
+  "pageNumber":578,
+  "weight":3,
+  "price": 457.8
+  }
+###
+POST http://localhost:8080/add/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "ISBN": "155776FG",
+  "name": "Муха в стакане",
+  "author":"АУАПЫВВ",
+  "pageNumber":666,
+  "weight":4,
+  "price": 957.8
+}
+###
+POST http://localhost:8080/add/4
+Content-Type: application/json
+
+{
+  "id": 4,
+  "ISBN": "155776FG",
+  "name": "Не СЦЫ",
+  "author":"Василий Трупов",
+  "pageNumber":578,
+  "weight":3,
+  "price": 457.8
+}
+###
+POST http://localhost:8080/add/5
+Content-Type: application/json
+
+{
+  "id": 5,
+  "ISBN": "5748485",
+  "name": "Болтун",
+  "author":"Жмоткин Петр",
+  "pageNumber":778,
+  "weight":3.5,
+  "price": 457.8
+}
+###
+GET http://localhost:8080/get/4
+Content-Type: application/json
+
+###
+GET http://localhost:8080/get
+Content-Type: application/json
+
+###
+POST http://localhost:8080/edit/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "ISBN": "99999",
+  "name": "Война и Мир",
+  "author": "Толстой Л.Н.",
+  "pageNumber": 5778,
+  "weight":7,
+  "price": 9988.8
+}
