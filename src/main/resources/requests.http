@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "id": 2,
-  "ISBN": "155776FG",
+  "isbn": "155776FG",
   "name": "Перо в стакане",
   "author":"German Tryif",
   "pageNumber":578,
@@ -16,7 +16,7 @@ Content-Type: application/json
 
 {
   "id": 3,
-  "ISBN": "155776FG",
+  "isbn": "155776FG",
   "name": "Муха в стакане",
   "author":"АУАПЫВВ",
   "pageNumber":666,
@@ -29,7 +29,7 @@ Content-Type: application/json
 
 {
   "id": 4,
-  "ISBN": "155776FG",
+  "isbn": "155776FG",
   "name": "Не СЦЫ",
   "author":"Василий Трупов",
   "pageNumber":578,
@@ -42,7 +42,7 @@ Content-Type: application/json
 
 {
   "id": 5,
-  "ISBN": "5748485",
+  "isbn": "5748485",
   "name": "Болтун",
   "author":"Жмоткин Петр",
   "pageNumber":778,
@@ -70,3 +70,8 @@ Content-Type: application/json
   "weight":7,
   "price": 9988.8
 }
+###
+POST http://localhost:8080/remove/2
+Content-Type: application/json
+
+###

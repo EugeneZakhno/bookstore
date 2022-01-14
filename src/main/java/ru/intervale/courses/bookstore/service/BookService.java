@@ -25,7 +25,7 @@ public class BookService {
        for (Map.Entry<Long, Book> entry : storage.entrySet()) {
            return  "id= " + entry.getKey() + ", Книга: " + entry.getValue();
        }
-        return "";
+        return ";\n";
     }
 
     public Book editBook(Long id,Book book) {

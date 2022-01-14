@@ -4,10 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
 @Slf4j
@@ -15,11 +12,11 @@ import java.math.BigDecimal;
 @Builder
 public class Book {
 
-    @NotBlank
+    @NotNull
     private Long id;
 
-    @Pattern(regexp = "[0-9A-Za-z]{18}",  message = "Разрешены только латинские буквы и цифры")
-    private String ISBN;
+    @Pattern(regexp = "[0-9a-zA-Zа-яА-ЯёЁ -]{0,12}",  message = "Разрешены только латинские буквы и цифры")
+    private String isbn;
 
     @Pattern(regexp = "[a-zA-Zа-яА-ЯёЁ '-]{1,256}",  message = "Название не может превышать 255 символов")
     private String name;
@@ -31,8 +28,7 @@ public class Book {
 
     private double weight;
 
-    @Min(5)
-    @Max(1000)
+    @NotNull
     private BigDecimal price;
 
 }
