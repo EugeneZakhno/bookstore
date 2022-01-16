@@ -33,14 +33,14 @@ public class Book {
 
     @Override
     public String toString() {
-        return " Book { " +
-                "id=" + id +
-                ", isbn='" + isbn + '\'' +
-                ", name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                ", pageNumber=" + pageNumber +
-                ", weight=" + weight +
-                ", price=" + price +
-                "} \n";
+        StringBuilder sb = new StringBuilder(" Book: ");
+        sb.append("id=").append(id);
+        sb.append(", isbn='").append(isbn).append('\'');
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", author=").append(author);
+        sb.append(", pageNumber='").append(pageNumber).append('\'');
+        sb.append(", weight='").append(weight).append('\'');
+        sb.append(", price='").append(price).append('\'');
+        return sb.toString() + "\n" ;
     }
 }

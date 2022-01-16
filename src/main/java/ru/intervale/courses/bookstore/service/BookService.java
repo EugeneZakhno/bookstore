@@ -21,7 +21,7 @@ public class BookService {
     }
 
     public String getAllBook() {
-        return storage.toString();
+        return "\n" + storage.toString() + "\n";
     }
 
     public Book editBook(Long id, Book book) {
