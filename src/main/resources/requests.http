@@ -4,7 +4,7 @@ Content-Type: application/json
 {
   "id": 2,
   "isbn": "155776FG",
-  "name": "Перо в стакане",
+  "name": "Буря в стакане",
   "author":"German Tryif",
   "pageNumber":578,
   "weight":3,
@@ -71,7 +71,7 @@ Content-Type: application/json
   "price": 9988.8
 }
 ###
-POST http://localhost:8080/remove/2
+POST http://localhost:8080/delete/3
 Content-Type: application/json
 
 ###

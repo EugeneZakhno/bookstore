@@ -31,4 +31,16 @@ public class Book {
     @NotNull
     private BigDecimal price;
 
+    @Override
+    public String toString() {
+        return " Book { " +
+                "id=" + id +
+                ", isbn='" + isbn + '\'' +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", pageNumber=" + pageNumber +
+                ", weight=" + weight +
+                ", price=" + price +
+                "} \n";
+    }
 }
