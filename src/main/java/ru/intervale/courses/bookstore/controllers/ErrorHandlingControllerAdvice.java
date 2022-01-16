@@ -17,9 +17,10 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class ErrorHandlingControllerAdvice {
-    @ResponseBody
+
     @ExceptionHandler(ConstraintViolationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
     public ValidationErrorResponse onConstraintValidationException(
             ConstraintViolationException e
     ) {

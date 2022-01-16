@@ -1,5 +1,6 @@
 package ru.intervale.courses.bookstore.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.intervale.courses.bookstore.entities.Book;
@@ -11,6 +12,8 @@ import java.util.Map;
 public class BookService {
 
     Map <Long, Book> storage;
+
+    ObjectMapper objectMapper = new ObjectMapper();
 
     public Book addBook(Long id, Book book) {
         return storage.put(id, book);
