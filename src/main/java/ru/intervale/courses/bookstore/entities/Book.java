@@ -1,8 +1,10 @@
 package ru.intervale.courses.bookstore.entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Builder;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import ru.intervale.courses.bookstore.util.JsonDeserializer;
 
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
@@ -10,6 +12,7 @@ import java.math.BigDecimal;
 @Slf4j
 @Data
 @Builder
+@JsonDeserialize(using = JsonDeserializer.class)
 public class Book {
 
     @NotNull

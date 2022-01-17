@@ -1,5 +1,6 @@
 package ru.intervale.courses.bookstore.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.intervale.courses.bookstore.entities.Book;
@@ -15,8 +16,8 @@ public class BookController {
     private final BookService bookService;
 
     @PostMapping(value = "/add/{id}")
-    public Book addBook(@PathVariable @Min(1) Long id, @Valid @RequestBody Book book) {
-    return bookService.addBook(id, book);
+    public String addBook(@PathVariable @Min(1) Long id, @Valid @RequestBody String str) throws JsonProcessingException {
+    return bookService.addBook(id, str);
    }
 
     @GetMapping(value = "/get")
@@ -25,20 +26,18 @@ public class BookController {
     }
 
     @GetMapping(value = "/get/{id}")
-    public Book getBook(@PathVariable Long id) {
+    public String getBook(@PathVariable Long id) {
         return bookService.getBook(id);
     }
 
     @PostMapping(value = "/edit/{id}")
-    public Book editBook(@PathVariable @Min(1) Long id, @Valid @RequestBody Book book) {
-        return bookService.editBook(id, book);
+    public String editBook(@PathVariable @Min(1) Long id, @Valid @RequestBody String str) throws JsonProcessingException {
+        return bookService.editBook(id, str);
     }
 
     @PostMapping(value = "/delete/{id}")
-    public Book deleteBook(@PathVariable Long id) {
+    public String deleteBook(@PathVariable Long id) {
         return bookService.deleteBook(id);
     }
-
-
 
 }

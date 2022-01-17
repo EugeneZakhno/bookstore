@@ -1,25 +1,30 @@
 package ru.intervale.courses.bookstore.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.intervale.courses.bookstore.entities.Book;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Service
 @AllArgsConstructor
 public class BookService {
 
-    Map <Long, Book> storage;
+    Map<Long, String> storage = new HashMap<>();
 
-    ObjectMapper objectMapper = new ObjectMapper();
+    ObjectMapper objectMapper;
 
-    public Book addBook(Long id, Book book) {
-        return storage.put(id, book);
+    public String addBook(Long id, String src) throws JsonProcessingException {
+        return storage.put(id, new ObjectMapper()
+                                     .readerFor(Book.class)
+                                      .readValue(src));
     }
 
-    public Book getBook(Long id) {
+    public String getBook(Long id) {
         return storage.get(id);
     }
 
@@ -27,11 +32,11 @@ public class BookService {
         return "\n" + storage.toString() + "\n";
     }
 
-    public Book editBook(Long id, Book book) {
-        return storage.replace(id, book);
+    public String editBook(Long id, String src) throws JsonProcessingException {
+        return storage.replace(id, new ObjectMapper().readerFor(Book.class).readValue(src));
     }
 
-    public Book deleteBook(Long id) {
+    public String deleteBook(Long id) {
         return storage.remove(id);
     }
 

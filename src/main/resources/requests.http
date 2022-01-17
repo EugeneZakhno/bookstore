@@ -42,7 +42,7 @@ Content-Type: application/json
 
 {
   "id": 5,
-  "isbn": "5748485",
+  "isbn": "574848-5",
   "name": "Болтун",
   "author":"Жмоткин Петр",
   "pageNumber":778,
