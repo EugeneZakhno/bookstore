@@ -20,18 +20,18 @@ public class JsonDeserializer  extends StdDeserializer<String> {
         super(vc);
     }
 
- //   https://www.baeldung.com/jackson-deserialization
+    // Example from ->  https://www.baeldung.com/jackson-deserialization
     @Override
-    public Book deserialize(JsonParser jp, DeserializationContext ctxt)
+    public String deserialize(JsonParser jp, DeserializationContext ctxt)
             throws IOException, JsonProcessingException {
         JsonNode node = jp.getCodec().readTree(jp);
         Long id = node.get("id").asLong();
         String isbn = node.get("isbn").asText();
         String name = node.get("name").asText();
         String author = node.get("author").asText();
-        int pageNumber = (Integer) node.get("pageNumber").numberValue();
-        double weight = (Double) node.get("weight").numberValue();
+        int pageNumber = node.get("pageNumber").asInt();
+        double weight = node.get("weight").asDouble();
         BigDecimal price = node.get("price").decimalValue();
-        return new Book(id, isbn, name, author, pageNumber, weight, price);
+        return new Book(id, isbn, name, author, pageNumber, weight, price).toString();
     }
 }

@@ -1,7 +1,6 @@
 package ru.intervale.courses.bookstore.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,9 +18,7 @@ public class BookService {
     ObjectMapper objectMapper;
 
     public String addBook(Long id, String src) throws JsonProcessingException {
-        return storage.put(id, new ObjectMapper()
-                                     .readerFor(Book.class)
-                                      .readValue(src));
+        return storage.put(id, new ObjectMapper().readerFor(Book.class).readValue(src));
     }
 
     public String getBook(Long id) {
