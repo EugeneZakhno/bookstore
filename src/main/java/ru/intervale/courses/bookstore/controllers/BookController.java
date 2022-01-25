@@ -8,6 +8,7 @@ import ru.intervale.courses.bookstore.service.BookService;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -15,29 +16,25 @@ public class BookController {
 
     private final BookService bookService;
 
-    @PostMapping(value = "/add/{id}")
-    public String addBook(@PathVariable @Min(1) Long id, @Valid @RequestBody String str) throws JsonProcessingException {
-    return bookService.addBook(id, str);
+    @PostMapping(value = "/add")
+    public Book addBook(@Valid @RequestBody Book book) {
+    return bookService.addBook(book);
    }
 
     @GetMapping(value = "/get")
-    public String getAllBook() {
+    public List<Book> getAllBook() {
        return bookService.getAllBook();
     }
 
-    @GetMapping(value = "/get/{id}")
-    public String getBook(@PathVariable Long id) {
-        return bookService.getBook(id);
-    }
 
-    @PostMapping(value = "/edit/{id}")
-    public String editBook(@PathVariable @Min(1) Long id, @Valid @RequestBody String str) throws JsonProcessingException {
-        return bookService.editBook(id, str);
+    @PostMapping(value = "/edit")
+    public Book editBook(@Valid @RequestBody Book book) {
+        return bookService.editBook(book);
     }
 
     @PostMapping(value = "/delete/{id}")
-    public String deleteBook(@PathVariable Long id) {
-        return bookService.deleteBook(id);
+    public void deleteBook(@PathVariable Long id) {
+        bookService.deleteBook(id);
     }
 
 }

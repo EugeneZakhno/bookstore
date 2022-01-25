@@ -1,4 +1,4 @@
-POST http://localhost:8080/add/2
+POST http://localhost:8080/add
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
   "price": 457.8
   }
 ###
-POST http://localhost:8080/add/3
+POST http://localhost:8080/add
 Content-Type: application/json
 
 {
