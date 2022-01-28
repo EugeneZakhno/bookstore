@@ -17,8 +17,6 @@ public class BookRowMapper implements RowMapper<Book> {
                 resultSet.getString("author"),
                 resultSet.getInt("page_number"),
                 resultSet.getDouble("weight"),
-                resultSet.getBigDecimal("price")
-
-        );
+                resultSet.getBigDecimal("price") );
     }
 }

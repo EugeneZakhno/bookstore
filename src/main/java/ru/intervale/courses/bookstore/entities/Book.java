@@ -53,7 +53,7 @@ public class Book {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder(" Book: ");
+        StringBuilder sb = new StringBuilder("Book: ");
         sb.append("id=").append(id);
         sb.append(", isbn='").append(isbn).append('\'');
         sb.append(", name='").append(name).append('\'');
