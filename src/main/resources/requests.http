@@ -2,7 +2,7 @@ POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "id": 2,
+  "id": 7,
   "isbn": "155776FG",
   "name": "Буря в стакане",
   "author":"German Tryif",
@@ -15,7 +15,7 @@ POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "id": 3,
+  "id": 9,
   "isbn": "155776FG",
   "name": "Муха в стакане",
   "author":"АУАПЫВВ",
@@ -24,7 +24,7 @@ Content-Type: application/json
   "price": 957.8
 }
 ###
-POST http://localhost:8080/add/4
+POST http://localhost:8080/add
 Content-Type: application/json
 
 {
@@ -37,7 +37,7 @@ Content-Type: application/json
   "price": 457.8
 }
 ###
-POST http://localhost:8080/add/5
+POST http://localhost:8080/add
 Content-Type: application/json
 
 {
@@ -46,7 +46,7 @@ Content-Type: application/json
   "name": "Болтун",
   "author":"Жмоткин Петр",
   "pageNumber":778,
-  "weight":3.5,
+  "weight":3,
   "price": 457.8
 }
 ###
@@ -58,20 +58,20 @@ GET http://localhost:8080/get
 Content-Type: application/json
 
 ###
-POST http://localhost:8080/edit/2
+POST http://localhost:8080/edit/7
 Content-Type: application/json
 
 {
-  "id": 2,
-  "isbn": "99999",
+  "id": 7,
+  "isbn": "9999-9",
   "name": "Война и Мир",
-  "author": "Толстой Л.Н.",
+  "author": "Толстой",
   "pageNumber": 5778,
-  "weight":7.0,
+  "weight":7,
   "price": 9988.80
 }
 ###
-POST http://localhost:8080/delete/3
+POST http://localhost:8080/delete/7
 Content-Type: application/json
 
 ###

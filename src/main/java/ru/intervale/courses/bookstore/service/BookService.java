@@ -22,8 +22,8 @@ public class BookService implements BookRepository {
     }
 
     @Override
-    public int save(Book book) {
-        return jdbcTemplate.update("INSERT INTO book(id, isbn,name,author,page_number, weight, price)VALUES (?, ?);",
+    public void save(Book book) {
+         jdbcTemplate.update("INSERT INTO book(id, isbn,name,author,page_number, weight, price)VALUES (?,?,?,?,?,?,?);",
                 book.getId(), book.getIsbn(), book.getName(), book.getAuthor(), book.getPageNumber(), book.getWeight(),
                 book.getPrice());
     }
@@ -31,15 +31,15 @@ public class BookService implements BookRepository {
 
     @Override
     public void delete(Long id) {
-        jdbcTemplate.update("DELETE FROM Person WHERE id=?;", id);
+        jdbcTemplate.update("DELETE FROM book WHERE id=?;", id);
     }
 
     @Override
-    public int edit(Long id, Book book) {
-        return jdbcTemplate.update("UPDATE Book SET id=?, isbn=?, name=?, author=?, pageNumber=?, weight=?, price=?"
+    public void edit(Long id, Book book) {
+        jdbcTemplate.update("UPDATE Book SET id=?, isbn=?, name=?, author=?, page_number=?, weight=?, price=?"
                         + "WHERE id=?",
                 book.getId(), book.getIsbn(), book.getName(), book.getAuthor(), book.getPageNumber(), book.getWeight(),
-                book.getPrice());
+                book.getPrice(), id);
 
     }
 

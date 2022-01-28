@@ -10,7 +10,7 @@ import ru.intervale.courses.bookstore.entities.Book;
 import java.io.IOException;
 import java.math.BigDecimal;
 
-public class JsonDeserializer  extends StdDeserializer<String> {
+public class JsonDeserializer  extends StdDeserializer<Book> {
 
     public JsonDeserializer() {
         this(null);
@@ -22,7 +22,7 @@ public class JsonDeserializer  extends StdDeserializer<String> {
 
     // Example from ->  https://www.baeldung.com/jackson-deserialization
     @Override
-    public String deserialize(JsonParser jp, DeserializationContext ctxt)
+    public Book deserialize(JsonParser jp, DeserializationContext ctxt)
             throws IOException, JsonProcessingException {
         JsonNode node = jp.getCodec().readTree(jp);
         Long id = node.get("id").asLong();
@@ -32,6 +32,6 @@ public class JsonDeserializer  extends StdDeserializer<String> {
         int pageNumber = node.get("pageNumber").asInt();
         double weight = node.get("weight").asDouble();
         BigDecimal price = node.get("price").decimalValue();
-        return new Book(id, isbn, name, author, pageNumber, weight, price).toString();
+        return new Book(id, isbn, name, author, pageNumber, weight, price);
     }
 }
