@@ -2,10 +2,10 @@ POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "id": 7,
+  "id": 17,
   "isbn": "155776FG",
-  "name": "Буря в стакане",
-  "author":"German Tryif",
+  "name": "Главные на море",
+  "author":"Шустрый Пряник",
   "pageNumber":578,
   "weight":3,
   "price": 457.8

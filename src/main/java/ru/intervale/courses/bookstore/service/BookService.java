@@ -2,46 +2,36 @@
 package ru.intervale.courses.bookstore.service;
 
 import lombok.AllArgsConstructor;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import ru.intervale.courses.bookstore.entities.Book;
 import ru.intervale.courses.bookstore.repository.BookRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class BookService implements BookRepository {
+public class BookService  {
 
-    private final JdbcTemplate jdbcTemplate;
+    BookRepository bookRepository;
 
-
-    @Override
     public List<Book> findAll() {
-        return jdbcTemplate.query("SELECT * FROM book;", new BookRowMapper());
+        return bookRepository.findAll();
     }
 
-    @Override
-    public void save(Book book) {
-         jdbcTemplate.update("INSERT INTO book(id, isbn,name,author,page_number, weight, price)VALUES (?,?,?,?,?,?,?);",
-                book.getId(), book.getIsbn(), book.getName(), book.getAuthor(), book.getPageNumber(), book.getWeight(),
-                book.getPrice());
+    public Optional<Book> findById(Long id) {
+        return bookRepository.findById(id);
     }
 
+ //  public Book edit(Long id, Book book) {
+ //      return bookRepository.edit(id, book );
+ //  }
 
-    @Override
-    public void delete(Long id) {
-        jdbcTemplate.update("DELETE FROM book WHERE id=?;", id);
+    public Book save(Book book) {
+        return bookRepository.save(book);
     }
 
-    @Override
-    public void edit(Long id, Book book) {
-        jdbcTemplate.update("UPDATE Book SET id=?, isbn=?, name=?, author=?, page_number=?, weight=?, price=?"
-                        + "WHERE id=?",
-                book.getId(), book.getIsbn(), book.getName(), book.getAuthor(), book.getPageNumber(), book.getWeight(),
-                book.getPrice(), id);
-
-    }
-
-
+ //  public void delete(Long id) {
+ //    bookRepository.delete(id);
+ //  }
 }

@@ -8,6 +8,8 @@ import ru.intervale.courses.bookstore.entities.Book;
 
 import java.math.BigDecimal;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
 
@@ -17,9 +19,6 @@ class BookServiceTest {
 
   private final BookService bookService;
 
-  private static final String isbn = "lkfjg-dfgg";
-  private static final Book book= mock(Book.class);
-
   @Test
   public void saveMock(){
 
@@ -28,6 +27,8 @@ class BookServiceTest {
 
     Book book2 = new Book(9L,"dfdhgb-ery", "JUnit 5 In Action","Moris", 520, 421.02,
             BigDecimal.valueOf(874.25));
+
+    given(bookService.save(any())).willReturn(book1);
 
   }
 
