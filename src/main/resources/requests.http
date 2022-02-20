@@ -28,7 +28,7 @@ POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "id": 4,
+  "id": 8,
   "isbn": "155776FG",
   "name": "Не СЦЫ",
   "author":"Василий Трупов",
@@ -41,7 +41,7 @@ POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "id": 5,
+  "id": 10,
   "isbn": "574848-5",
   "name": "Болтун",
   "author":"Жмоткин Петр",
@@ -58,11 +58,11 @@ GET http://localhost:8080/get
 Content-Type: application/json
 
 ###
-POST http://localhost:8080/edit/7
+POST http://localhost:8080/edit
 Content-Type: application/json
 
 {
-  "id": 7,
+  "id": 10,
   "isbn": "9999-9",
   "name": "Война и Мир",
   "author": "Толстой",
@@ -71,7 +71,7 @@ Content-Type: application/json
   "price": 9988.80
 }
 ###
-POST http://localhost:8080/delete/7
+POST http://localhost:8080/delete/10
 Content-Type: application/json
 
 ###

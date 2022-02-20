@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.intervale.courses.bookstore.entities.Book;
 import ru.intervale.courses.bookstore.service.BookService;
 
-import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
@@ -32,14 +31,14 @@ public class BookController {
         return bookService.save(bookRecord);
     }
 
-  //  @PostMapping(value = "/edit/{id}")
-  //  public  Book editBook(@PathVariable Long id, @Valid @RequestBody Book book) {
-  //     return bookService.edit(id, book);
-  //  }
+    @PostMapping(value = "/edit")
+    public  Book editBook(@Valid @RequestBody Book book) {
+       return bookService.edit(book);
+    }
 
-  //  @PostMapping(value = "/delete/{id}")
-  //  public void deleteBook(@PathVariable Long id) {
-  //    bookService.delete(id);
-  //  }
+    @PostMapping(value = "/delete/{id}")
+    public void deleteBook(@PathVariable Long id) {
+      bookService.delete(id);
+    }
 
 }

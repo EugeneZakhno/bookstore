@@ -3,7 +3,6 @@ package ru.intervale.courses.bookstore.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ru.intervale.courses.bookstore.entities.Book;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -14,9 +13,7 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
     Optional<Book> findById(Long id);
 
-  //  Book edit(Long id, Book book);
-
     Book save(Book book);
 
-   // void delete(Long id);
+    void deleteBookById(Long id);
 }
