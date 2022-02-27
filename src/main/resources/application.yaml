@@ -1,0 +1,8 @@
+spring:
+  liquibase:
+    enabled: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bookstore
+    username: postgres
+    password: 6iN5hk
+    driver-class-name: org.postgresql.Driver

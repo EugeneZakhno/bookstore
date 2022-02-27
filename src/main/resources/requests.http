@@ -2,7 +2,7 @@ POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "id": 17,
+  "id": 18,
   "isbn": "155776FG",
   "name": "Главные на море",
   "author":"Шустрый Пряник",

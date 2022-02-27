@@ -19,7 +19,7 @@ public class BookController {
 
     @GetMapping(value = "/get")
     public List<Book> getAllBookRecords()
-    { return bookService.findAll(); }
+    { return bookService.findAllBooks(); }
 
     @GetMapping(value = "{bookId}")
     public Optional<Book> getBookById(@PathVariable(value = "bookId") Long bookId) {
