@@ -25,6 +25,10 @@ public class BookService  {
         return bookRepository.findById(id);
     }
 
+    public List<Book> findByAuthor(String author) {
+        return bookRepository.findByAuthor(author);
+    }
+
    public Book edit(Book book) {
        return bookRepository.save(book);
    }
