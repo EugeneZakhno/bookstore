@@ -21,15 +21,21 @@ public class BookService  {
         return bookRepository.findAll();
     }
 
-    public Optional<Book> findById(Long id) {
-        return bookRepository.findById(id);
+    public Book getBook(Long id ) {
+        Optional<Book> bookResponse =  bookRepository.findById(id);
+        Book book = bookResponse.get();
+        return book;
     }
 
     public List<Book> findByAuthor(String author) {
         return bookRepository.findByAuthor(author);
     }
 
-   public Book edit(Book book) {
+    public List<Book> findByAuthorOpenLibrary(String author) {
+        return null;
+    }
+
+    public Book edit(Book book) {
        return bookRepository.save(book);
    }
 

@@ -64,7 +64,7 @@ class BookServiceTest {
     Book book = new Book(10L,"dfdhgb-ery", "Mockito In Action","ALAN", 500, 321.02,
             BigDecimal.valueOf(474.25));
     // when
-    bookService.findById(book.getId());
+    bookService.getBook(book.getId());
     // Then
     verify(bookRepository).findById(book.getId());
   }

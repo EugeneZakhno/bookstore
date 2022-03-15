@@ -21,14 +21,19 @@ public class BookController {
     public List<Book> getAllBookRecords()
     { return bookService.findAllBooks(); }
 
-    @GetMapping(value = "{id}")
-    public Optional<Book> getBookById(@PathVariable(value = "id") Long id) {
-        return bookService.findById(id);
+    @GetMapping(value = "/get/{id}")
+    public Book getBookById(@PathVariable(value = "id") Long id) {
+        return bookService.getBook(id);
     }
 
-    @GetMapping(value = "{author}")
-    public List<Book> getBookByAuthor(@PathVariable(value = "author") String author) {
+    @GetMapping(value = "/find/{authorName}")
+    public List<Book> getBookByAuthor(@PathVariable(value = "authorName") String author) {
         return bookService.findByAuthor(author);
+    }
+
+    @GetMapping(value = "/find_openlibrary/{authorName}")
+    public List<Book> getBookByAuthorOpenlibrary(@PathVariable(value = "authorName") String author) {
+        return bookService.findByAuthorOpenLibrary(author);
     }
 
     @PostMapping(value = "/add")
