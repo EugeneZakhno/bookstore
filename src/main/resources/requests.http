@@ -41,10 +41,10 @@ POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "id": 111,
+  "id": 171,
   "isbn": "574848-5",
   "name": "Болтун",
-  "author":"Жмоткин Петр",
+  "author":"OL23919A",
   "pageNumber":778,
   "weight":3,
   "price": 457.8
@@ -58,7 +58,7 @@ GET http://localhost:8080/get
 Content-Type: application/json
 ###
 
-GET http://localhost:8080/find/Жмоткин Петр
+GET http://localhost:8080/find/OL23919A
 Content-Type: application/json
 
 ###

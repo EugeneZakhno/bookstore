@@ -7,6 +7,7 @@ import ru.intervale.courses.bookstore.entities.Book;
 import ru.intervale.courses.bookstore.service.BookService;
 
 import javax.validation.Valid;
+import java.io.IOException;
 import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +29,7 @@ public class BookController {
     }
 
     @GetMapping(value = "/find/{authorName}")
-    public HttpResponse getBookByAuthor(@PathVariable(value = "authorName") String author) {
+    public HttpResponse<String> getBookByAuthor(@PathVariable(value = "authorName") String author) throws IOException, InterruptedException {
         return bookService.findByAuthor(author);
     }
 
