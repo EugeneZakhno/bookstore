@@ -58,7 +58,11 @@ GET http://localhost:8080/get
 Content-Type: application/json
 ###
 
-GET http://localhost:8080/find/OL23919A
+GET http://localhost:8080/find_openlibrary/OL23919A
+Content-Type: application/json
+###
+
+GET http://localhost:8080/find/7
 Content-Type: application/json
 
 ###

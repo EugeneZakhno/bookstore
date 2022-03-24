@@ -1,6 +1,7 @@
 package ru.intervale.courses.bookstore.controllers;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import ru.intervale.courses.bookstore.entities.Book;
@@ -28,14 +29,15 @@ public class BookController {
         return bookService.getBook(id);
     }
 
-    @GetMapping(value = "/find/{authorName}")
-    public HttpResponse<String> getBookByAuthor(@PathVariable(value = "authorName") String author) throws IOException, InterruptedException {
-        return bookService.findByAuthor(author);
+    @GetMapping(value = "/find_openlibrary/{authorName}")
+    public String getBookByAuthorOpenlibrary(@PathVariable(value = "authorName") String author) throws IOException, InterruptedException {
+        getBookByAuthor(author);
+        return bookService.findByAuthorOpenLibrary(author);
     }
 
-    @GetMapping(value = "/find_openlibrary/{authorName}")
-    public List<Book> getBookByAuthorOpenlibrary(@PathVariable(value = "authorName") String author) {
-        return bookService.findByAuthorOpenLibrary(author);
+    @GetMapping(value = "/find/{authorName}")
+    public List<Book> getBookByAuthor(@PathVariable(value = "authorName") String author) {
+    return bookService.findByAuthor(author);
     }
 
     @PostMapping(value = "/add")
