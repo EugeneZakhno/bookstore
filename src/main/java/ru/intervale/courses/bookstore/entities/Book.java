@@ -37,7 +37,7 @@ public class Book {
     private String name;
 
     @Column (name = "author")
-    @Pattern(regexp = "[a-zA-Zа-яА-ЯёЁ '-]{1,40}")
+    @Pattern(regexp = "[0-9a-zA-Zа-яА-ЯёЁ '-]{1,40}")
     private String author;
 
     @Column (name = "page_number")

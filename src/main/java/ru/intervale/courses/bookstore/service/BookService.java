@@ -33,7 +33,7 @@ public class BookService  {
     public String findByAuthorOpenLibrary(String author) {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> responseEntity = restTemplate.getForEntity("https://openlibrary.org/authors/"+author+".json", String.class);
-        return responseEntity.getBody();
+        return responseEntity.getBody() + "\n" + findByAuthor(author);
     }
 
     public List<Book> findByAuthor(String author) {

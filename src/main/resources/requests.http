@@ -28,10 +28,10 @@ POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "id": 19,
-  "isbn": "155776FG",
-  "name": "Не СЦЫ",
-  "author":"Василий Трупов",
+  "id": 22,
+  "isbn": "OL23919A",
+  "name": "Повесить овечку",
+  "author":"OL23919A",
   "pageNumber":578,
   "weight":3,
   "price": 457.8
@@ -41,9 +41,9 @@ POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "id": 171,
+  "id": 179,
   "isbn": "574848-5",
-  "name": "Болтун",
+  "name": "Крякатун",
   "author":"OL23919A",
   "pageNumber":778,
   "weight":3,
