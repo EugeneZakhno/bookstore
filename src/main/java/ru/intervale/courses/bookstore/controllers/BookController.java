@@ -1,7 +1,6 @@
 package ru.intervale.courses.bookstore.controllers;
 
 import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 import ru.intervale.courses.bookstore.entities.Book;
@@ -9,9 +8,7 @@ import ru.intervale.courses.bookstore.service.BookService;
 
 import javax.validation.Valid;
 import java.io.IOException;
-import java.net.http.HttpResponse;
 import java.util.List;
-import java.util.Optional;
 
 @Component
 @RestController
