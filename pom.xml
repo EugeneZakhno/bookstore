@@ -127,8 +127,8 @@
                                 <library>spring-mvc</library>
                                 <interfaceOnly>true</interfaceOnly>
                                 <useBeanValidation>true</useBeanValidation>
-                                <dateLibrary>java8</dateLibrary>
-                                <java8>true</java8>
+                                <dateLibrary>java11</dateLibrary>
+                                <java11>true</java11>
                             </configOptions>
                             <ignoreFileOverride>${project.basedir}/.openapi-generator-ignore</ignoreFileOverride>
                         </configuration>
