@@ -37,6 +37,11 @@ public class BookController {
     return bookService.findByAuthor(author);
     }
 
+    @GetMapping(value = "/price/{title}")
+    public List<Book> getPriceByTitle(@PathVariable(value = "title") String name) {
+        return bookService.findByPrice(name);
+    }
+
     @PostMapping(value = "/add")
     public Book createBookRecord(@RequestBody @Valid Book bookRecord) {
         return bookService.save(bookRecord);
