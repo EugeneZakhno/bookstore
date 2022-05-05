@@ -16,5 +16,17 @@
             <column name="price" type="double precision"/>
         </createTable>
     </changeSet>
+    <changeSet author="ezohno" id="COURSES-006_add_new_column_currency">
+        <preConditions onFail="MARK_RAN">
+            <and>
+                <not>
+                    <columnExists columnName="currency" tableName="book"/>
+                </not>
+            </and>
+        </preConditions>
+        <addColumn tableName="book">
+            <column name="currency" type="varchar(50)"/>
+        </addColumn>
+    </changeSet>
 
 </databaseChangeLog>

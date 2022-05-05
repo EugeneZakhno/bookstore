@@ -50,4 +50,8 @@ public class Book {
     @Column (name = "price")
     private BigDecimal price;
 
+    @NotNull
+    @Column (name = "currency")
+    private String currency;
+
 }

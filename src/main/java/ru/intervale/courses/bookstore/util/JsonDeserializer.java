@@ -32,6 +32,7 @@ public class JsonDeserializer  extends StdDeserializer<Book> {
         int pageNumber = node.get("pageNumber").asInt();
         double weight = node.get("weight").asDouble();
         BigDecimal price = node.get("price").decimalValue();
-        return new Book(id, isbn, name, author, pageNumber, weight, price);
+        String currency = node.get("currency").asText();
+        return new Book(id, isbn, name, author, pageNumber, weight, price, currency);
     }
 }

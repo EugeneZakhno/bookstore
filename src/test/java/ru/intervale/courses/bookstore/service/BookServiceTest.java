@@ -37,7 +37,7 @@ class BookServiceTest {
   void canAddBook() {
     // given
     Book book = new Book(9L,"dfdhgb-ery", "Mockito In Action","ALAN", 500, 321.02,
-                                     BigDecimal.valueOf(474.25));
+                                     BigDecimal.valueOf(474.25),"RUB");
     // when
     bookService.save(book);
     // then
@@ -51,7 +51,7 @@ class BookServiceTest {
   void canEditBook() {
     // given
     Book book = new Book(15L,"dfdhgb-ery", "Mockito In Action","ALAN", 500, 321.02,
-            BigDecimal.valueOf(474.25));
+            BigDecimal.valueOf(474.25), "RUB");
     // when
     bookService.save(book);
     // Then
@@ -62,7 +62,7 @@ class BookServiceTest {
   void canFindBookById() {
     // given
     Book book = new Book(10L,"dfdhgb-ery", "Mockito In Action","ALAN", 500, 321.02,
-            BigDecimal.valueOf(474.25));
+            BigDecimal.valueOf(474.25),"RUB");
     // when
     bookService.getBook(book.getId());
     // Then
@@ -73,7 +73,7 @@ class BookServiceTest {
   void canDeleteBook() {
     // given
     Book book = new Book(11L,"dfdhgb-ery", "Mockito In Action","ALAN", 500, 321.02,
-            BigDecimal.valueOf(474.25));
+            BigDecimal.valueOf(474.25), "RUB");
     // when
     bookService.delete(book.getId());
     // Then
